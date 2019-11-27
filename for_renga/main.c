@@ -1,3 +1,7 @@
+/* 
+	0syscall6 by SKGleba
+	All Rights Reserved
+*/
 
 #include <stdio.h>
 #include <string.h>
