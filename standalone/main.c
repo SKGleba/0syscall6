@@ -24,6 +24,13 @@ SceUID sub_81000000_patched(int resume, int eventid, void *args, void *opt) {
 void _start() __attribute__ ((weak, alias ("module_start")));
 int module_start(SceSize argc, const void *args)
 {
+	// Enable update_sm caching
+	NMPcache_ussm("os0:sm/update_service_sm.self", 1);
+	
+	// Use venezia SPRAM
+	NMPcorridor_paddr = 0x1f850000;
+	NMPcorridor_size = 0x10000;
+	
 	// Patch syscall6 to return 0
 	NMPrun_default(&sk_rvk_patch_nmp, sk_rvk_patch_nmp_len);
 	
@@ -37,5 +44,7 @@ int module_start(SceSize argc, const void *args)
 
 int module_stop(SceSize argc, const void *args)
 {
+	// Free the cached sm memblock
+	NMPcache_ussm(NULL, 0);
 	return SCE_KERNEL_STOP_SUCCESS;
 }

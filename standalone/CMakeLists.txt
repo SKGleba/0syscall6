@@ -27,6 +27,7 @@ target_link_libraries(0syscall6.elf
 	SceSysrootForKernel_stub
 	taihenForKernel_stub
 	taihenModuleUtils_stub
+	SceIofilemgrForDriver_stub
 )
 
 set_target_properties(0syscall6.elf

@@ -17,7 +17,7 @@ static int sm_entry = 0;
 
 static void hook_kprx() {
 	// Path syscall6
-	renga_exec_code(&sk_rvk_patch_nmp, NULL, sk_rvk_patch_nmp_len, 0);
+	renga_exec_code(&sk_rvk_patch_nmp, NULL, sk_rvk_patch_nmp_len);
 	
 	// Add custom kprxauth if present
 	if (sm_entry == 0)
