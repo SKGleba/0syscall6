@@ -15,6 +15,7 @@ A tool that patches Playstation Vita's lv0's secure_kernel's syscall 6 (SELF/RVK
 	3) Reboot
 	
 ## Notes
+	- The checks are removed from SELFs that are passed via syscall 6 as well as SM SELFs
 	- If the SELF uses new key revisions please use the _renga version with a decrypted kprx_auth_sm (.bin) in ur0:tai/
 		- psp2renga framework is required
 	- If you are using the psp2renga framework, please use the _renga version to prevent framework overwrite
