@@ -25,6 +25,8 @@ target_link_libraries(0syscall6.elf
 	SceSysclibForDriver_stub
 	SceSysmemForDriver_stub
 	SceSysrootForKernel_stub
+	taihenForKernel_stub
+	taihenModuleUtils_stub
 	SceIofilemgrForDriver_stub
 	SceKernelSuspendForDriver_stub
 )
